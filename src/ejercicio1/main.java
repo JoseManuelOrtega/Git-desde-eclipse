@@ -1,24 +1,41 @@
 package ejercicio1;
-
 import java.util.Scanner;
 
 public class main {
 
-	private static Scanner sc = new Scanner(System.in);
-	public static void main(String[] args) {
-		int salir=0;
-		int frasemax =0;
-		int frasemin =0;
-		do {
-		for(int i=salir; i<2; i++) {
-		System.out.println("Introduzca una frase");
-		String frase = sc.nextLine();
-		System.out.println("La frase contiene " + frase.length());
-		System.out.println("¿Quiere continuar?");
-		System.out.println("1.Si");
-		System.out.println("2.No");
-		salir = sc.nextInt();
-		}}
-		while(salir !=2);
-		
-		}}
+	    public static void main(String[] args) {
+	        Scanner scanner = new Scanner(System.in);
+
+
+	        System.out.print("Introduce una frase: ");
+	        String frase = scanner.nextLine();
+
+
+	        String[] p = frase.split(" ");
+
+
+	        int numeroDePalabras = p.length;
+
+	       
+	        String pmax = p[0];
+	        String pmin = p[0];
+
+	
+	        for (String palabra : p) {
+	            if (palabra.length() > pmax.length()) {
+	                pmax = palabra;
+	            }
+	            if (palabra.length() < pmin.length()) {
+	                pmin = palabra;
+	            }
+	        }
+
+
+	        System.out.println("Numero de palabras: " + numeroDePalabras);
+	        System.out.println("Palabra mas larga es " + pmax + " con " + pmax.length() + " caracteres");
+	        System.out.println("Palabra mas corta es " + pmin + " con " + pmin.length() + " caracteres");
+
+	        scanner.close();
+	    }
+	}
+
